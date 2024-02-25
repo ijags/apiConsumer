@@ -1,0 +1,18 @@
+server:
+  port: 9091
+spring:
+  cloud:
+    stream:
+      bindings:
+        streambridgeOrders-in-0:
+          destination: orders_channel
+          group: orders_queue  
+      rabbit:
+        bindings:
+          quorum.enabled: true                               
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+
